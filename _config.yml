@@ -1,0 +1,17 @@
+title: GitHub Pages Site
+description: Jekyll-сайт, размещённый на GitHub Pages
+theme: minima
+baseurl: ""
+url: ""
+
+markdown: kramdown
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+minima:
+  skin: auto
+
+header_pages:
+  - about.md
