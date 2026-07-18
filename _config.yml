@@ -1,8 +1,9 @@
-title: GitHub Pages Site
-description: Jekyll-сайт, размещённый на GitHub Pages
+title: Логово автоматизатора
+description: Блог о промышленной автоматизации, AggreGate, ПЛК и не только
+lang: ru
 theme: minima
 baseurl: ""
-url: ""
+url: "https://molchanov.lv"
 
 markdown: kramdown
 plugins:
@@ -11,7 +12,10 @@ plugins:
   - jekyll-seo-tag
 
 minima:
-  skin: auto
+  skin: classic
 
 header_pages:
+  - files.md
   - about.md
+
+author: Молчанов Л.В.

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Как сохранять данные во внешнюю БД без потерь"
-date: 2026-06-01 12:00:00 +0300
+date: 2026-01-15 12:00:00 +0300
 categories: AggreGate
 author: Молчанов Л.
 description: "Надёжная схема буферизации данных через Apache Derby в AggreGate с пакетной записью в PostgreSQL."
@@ -50,7 +50,7 @@ image: /assets/images/posts/zapis-cherez-kesh-derby/cover.jpg
 
 Остальное оставляем по умолчанию: логин и пароль пустые. При сохранении AggreGate сам создаст базу с именем buffer.
 
-![Создание устройства для работы с Derby](/assets/images/posts/zapis-cherez-kesh-derby/derby_settings.jpg)
+![Создание устройства для работы с Derby](/assets/images/posts/zapis-cherez-kesh-derby/1783707445575-s7f7t8.jpg)
 
 *Создание устройства для работы с Derby*
 
@@ -180,7 +180,7 @@ FROM jsonb_to_recordset(?::jsonb) AS t(topic TEXT, message TEXT)
 
 | Target | Expression | Condition |
 | --- | --- | --- |
-| updateBuffer | callFunction("users.admin.devices.buffer",\n\t"DELETE FROM buffer " +\n\t"WHERE is_saved = TRUE"\n\t, true\n) |  |
+| updateBuffer | callFunction("users.admin.devices.buffer",<br>"DELETE FROM buffer " +<br>"WHERE is_saved = TRUE"<br>, true<br>) |  |
 
 ## Итог
 

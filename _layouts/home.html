@@ -1,0 +1,43 @@
+---
+layout: default
+---
+
+<section class="hero">
+  <div class="hero__copy">
+    <p class="hero__eyebrow">AggreGate · PLC · драйверы · интеграции · IoT · кейсы · лайфхаки</p>
+    <h1 class="hero__title">От идеи <span>до реализации</h1>
+    <p class="hero__lead">{{ site.description }}</p>
+  </div>
+  <div>
+	<img src="/assets/images/logo.png" alt="" loading="lazy" style="float: right; margin-left: 10px; width: 100px;">
+  </div>
+</section>
+
+<section class="posts-section">
+  <h2 class="posts-section__title">Статьи</h2>
+  <div class="post-grid">
+    {%- for post in site.posts -%}
+      <article class="post-card">
+        <a class="post-card__link" href="{{ post.url | relative_url }}">
+          {%- if post.image -%}
+            <div class="post-card__media">
+              <img src="{{ post.image | relative_url }}" alt="" loading="lazy">
+            </div>
+          {%- endif -%}
+          <div class="post-card__body">
+            <div class="post-card__meta">
+              <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%d.%m.%Y" }}</time>
+              {%- if post.categories.size > 0 -%}
+                <span class="post-card__category">{{ post.categories | first }}</span>
+              {%- endif -%}
+            </div>
+            <h3 class="post-card__title">{{ post.title | escape }}</h3>
+            {%- if post.description -%}
+              <p class="post-card__excerpt">{{ post.description | escape }}</p>
+            {%- endif -%}
+          </div>
+        </a>
+      </article>
+    {%- endfor -%}
+  </div>
+</section>

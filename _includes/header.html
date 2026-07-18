@@ -1,0 +1,25 @@
+<header class="site-header">
+  <div class="wrapper site-header__inner">
+    <a class="site-title" rel="author" href="{{ '/' | relative_url }}">
+      <span class="site-title__mark" aria-hidden="true">MLV</span>
+      <span class="site-title__text">
+        <span class="site-title__brand">Molchanov.LV</span>
+        <span class="site-title__blog">логово автоматизатора</span>
+      </span>
+    </a>
+
+    <nav class="site-nav">
+      <input type="checkbox" id="nav-trigger" class="nav-trigger">
+      <label for="nav-trigger" class="menu-icon" aria-label="Меню">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+      <div class="trigger">
+        <a class="page-link{% if page.url == '/' %} page-link--active{% endif %}" href="{{ '/' | relative_url }}">Статьи</a>
+        <a class="page-link{% if page.url == '/files/' %} page-link--active{% endif %}" href="{{ '/files/' | relative_url }}">Файлы</a>
+        <a class="page-link{% if page.url == '/about/' %} page-link--active{% endif %}" href="{{ '/about/' | relative_url }}">Обо мне</a>
+      </div>
+    </nav>
+  </div>
+</header>

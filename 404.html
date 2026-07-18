@@ -3,22 +3,10 @@ permalink: /404.html
 layout: default
 ---
 
-<style>
-  .container {
-    margin: 10px auto;
-    max-width: 600px;
-    text-align: center;
-  }
-  h1 {
-    margin: 30px 0;
-    font-size: 4em;
-    line-height: 1;
-    letter-spacing: -1px;
-  }
-</style>
-
-<div class="container">
-  <h1>404</h1>
-  <p><strong>Страница не найдена</strong></p>
-  <p>Запрошенная страница не существует.</p>
+<div class="hero" style="grid-template-columns: 1fr;">
+  <div class="hero__copy">
+    <p class="hero__eyebrow">404</p>
+    <h1 class="hero__title">Страница не найдена</h1>
+    <p class="hero__lead">Запрошенная страница не существует. Вернитесь на <a href="{{ '/' | relative_url }}">главную</a>.</p>
+  </div>
 </div>
