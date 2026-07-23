@@ -34,6 +34,19 @@ permalink: /files/
     </div>
     <a class="file-card__download" href="{{ '/assets/files/database.jar' | relative_url }}" download>Скачать</a>
   </article>
+  <article class="file-card">
+    <div class="file-card__icon" aria-hidden="true">JAR</div>
+    <div class="file-card__body">
+      <h2 class="file-card__title">database64.jar</h2>
+      <p class="file-card__desc">Database AggreGate driver для версии 6.4x.xx</p>
+      <div class="file-card__meta">
+        <span class="file-card__category">Drivers</span>
+        <span>190 KB</span>
+        <span>23.07.2026</span>
+      </div>
+    </div>
+    <a class="file-card__download" href="{{ '/assets/files/database.jar' | relative_url }}" download>Скачать</a>
+  </article>  
    <article class="file-card">
     <div class="file-card__icon" aria-hidden="true">ZIP</div>
     <div class="file-card__body">
