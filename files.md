@@ -32,7 +32,7 @@ permalink: /files/
         <span>06.07.2026</span>
       </div>
     </div>
-    <a class="file-card__download" href="{{ '/assets/files/database.jar' | relative_url }}" download>Скачать</a>
+    <a class="file-card__download" href="{{ '/assets/files/database64.jar' | relative_url }}" download>Скачать</a>
   </article>
   <article class="file-card">
     <div class="file-card__icon" aria-hidden="true">JAR</div>
