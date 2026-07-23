@@ -4,7 +4,7 @@ title: "Драйвер ПЛК Контар на flexible"
 date: 2026-07-17 12:00:00 +0300
 categories: AggreGate
 author: Молчанов Л.
-description: "Пример разработки дроайвера на flexible."
+description: "Пример разработки драйвера на flexible."
 image: /assets/images/posts/drayver-plk-kontar-na-flexible/cover.jpg
 ---
 
