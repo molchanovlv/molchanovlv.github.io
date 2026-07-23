@@ -239,11 +239,16 @@ a:hover {
   display: flex;
   align-items: center;
   justify-content: flex-end;
+  justify-self: end;
+  width: 100%;
+  min-width: 0;
 }
 
 .hero__logo img {
+  display: block;
   width: 100px;
   height: auto;
+  margin-left: auto;
 }
 
 .hero__panel {
@@ -388,9 +393,9 @@ a:hover {
 }
 
 .post-card__tag {
-  color: var(--text-secondary);
-  background: transparent;
-  border: 1px solid var(--border);
+  color: var(--accent);
+  background: rgba(56, 189, 248, 0.1);
+  border: 1px solid rgba(56, 189, 248, 0.35);
 }
 
 .post-card__title {
@@ -448,9 +453,9 @@ a:hover {
 }
 
 .post-tag {
-  color: var(--text-secondary);
-  background: transparent;
-  border: 1px solid var(--border);
+  color: var(--accent);
+  background: rgba(56, 189, 248, 0.1);
+  border: 1px solid rgba(56, 189, 248, 0.35);
 }
 
 .post-title,
