@@ -235,6 +235,17 @@ a:hover {
   line-height: 1.6;
 }
 
+.hero__logo {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.hero__logo img {
+  width: 100px;
+  height: auto;
+}
+
 .hero__panel {
   position: relative;
   min-height: 160px;
@@ -356,13 +367,30 @@ a:hover {
   color: var(--text-secondary);
 }
 
-.post-card__category {
-  color: var(--primary);
-  background: var(--primary-soft);
+.post-card__labels {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 6px;
+}
+
+.post-card__category,
+.post-card__tag {
   padding: 3px 10px;
   border-radius: 999px;
   font-size: 0.72rem;
   font-weight: 500;
+}
+
+.post-card__category {
+  color: var(--primary);
+  background: var(--primary-soft);
+}
+
+.post-card__tag {
+  color: var(--text-secondary);
+  background: transparent;
+  border: 1px solid var(--border);
 }
 
 .post-card__title {
@@ -399,17 +427,30 @@ a:hover {
 }
 
 .post-eyebrow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
   margin: 0 0 10px;
 }
 
-.post-category {
+.post-category,
+.post-tag {
   display: inline-block;
-  color: var(--primary);
-  background: var(--primary-soft);
   padding: 4px 12px;
   border-radius: 999px;
   font-size: 0.75rem;
   font-weight: 500;
+}
+
+.post-category {
+  color: var(--primary);
+  background: var(--primary-soft);
+}
+
+.post-tag {
+  color: var(--text-secondary);
+  background: transparent;
+  border: 1px solid var(--border);
 }
 
 .post-title,
@@ -900,6 +941,10 @@ table td {
     padding: 28px 24px;
   }
 
+  .hero__logo {
+    display: none;
+  }
+
   .hero__panel {
     min-height: 120px;
   }
@@ -915,24 +960,59 @@ table td {
     display: none;
   }
 
-  .site-nav .menu-icon {
+  .site-nav {
+    position: relative;
+    top: auto;
+    right: auto;
+    float: none;
+    line-height: inherit;
+    text-align: left;
+    background: transparent !important;
+    background-color: transparent !important;
+    border: none !important;
+    border-radius: 0;
+  }
+
+  .site-nav .menu-icon,
+  .site-nav label[for="nav-trigger"] {
     display: flex;
+    float: none;
     flex-direction: column;
     justify-content: center;
     gap: 5px;
     width: 40px;
     height: 40px;
+    line-height: normal;
     cursor: pointer;
+    background: transparent !important;
+    background-color: transparent !important;
     border: 1px solid var(--border);
     border-radius: var(--radius-sm);
     padding: 10px;
+    color: var(--text-secondary);
+    text-align: center;
+    z-index: 2;
+  }
+
+  .site-nav .menu-icon:hover,
+  .site-nav label[for="nav-trigger"]:hover {
+    background: rgba(255, 255, 255, 0.04) !important;
+    border-color: var(--border-strong);
+    color: var(--text);
   }
 
   .site-nav .menu-icon span {
     display: block;
     height: 2px;
-    background: var(--text);
+    background: currentColor;
     border-radius: 2px;
+  }
+
+  .site-nav .nav-trigger:checked ~ .menu-icon,
+  .site-nav .nav-trigger:checked ~ label[for="nav-trigger"] {
+    background: var(--primary-soft) !important;
+    border-color: var(--primary);
+    color: var(--primary);
   }
 
   .site-nav .trigger {
@@ -940,6 +1020,7 @@ table td {
     position: absolute;
     right: 0;
     top: calc(100% + 10px);
+    clear: none;
     flex-direction: column;
     align-items: stretch;
     min-width: 180px;
@@ -947,10 +1028,17 @@ table td {
     background: var(--card);
     border: 1px solid var(--border);
     border-radius: var(--radius-sm);
+    text-align: left;
   }
 
   .site-nav .nav-trigger:checked ~ .trigger {
     display: flex;
+  }
+
+  .site-nav .page-link {
+    display: block;
+    margin: 0;
+    padding: 8px 14px;
   }
 
   .post-grid {

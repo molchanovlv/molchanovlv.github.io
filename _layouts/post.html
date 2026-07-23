@@ -3,11 +3,16 @@ layout: default
 ---
 <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
   <header class="post-header">
+    {%- if page.categories.size > 0 or page.tags.size > 0 -%}
     <p class="post-eyebrow">
-      {%- if page.categories.size > 0 -%}
-        <span class="post-category">{{ page.categories | first }}</span>
-      {%- endif -%}
+      {%- for category in page.categories -%}
+        <span class="post-category">{{ category }}</span>
+      {%- endfor -%}
+      {%- for tag in page.tags -%}
+        <span class="post-tag">{{ tag }}</span>
+      {%- endfor -%}
     </p>
+    {%- endif -%}
     <h1 class="post-title p-name" itemprop="name headline">{{ page.title | escape }}</h1>
     <p class="post-meta">
       {%- assign date_format = "%d.%m.%Y" -%}

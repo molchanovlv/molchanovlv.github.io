@@ -5,11 +5,11 @@ layout: default
 <section class="hero">
   <div class="hero__copy">
     <p class="hero__eyebrow">AggreGate · PLC · драйверы · интеграции · IoT · кейсы · лайфхаки</p>
-    <h1 class="hero__title">От идеи <span>до реализации</h1>
+    <h1 class="hero__title">Логово <span>автоматизатора</h1>
     <p class="hero__lead">{{ site.description }}</p>
   </div>
-  <div>
-	<img src="/assets/images/logo.png" alt="" loading="lazy" style="float: right; margin-left: 10px; width: 100px;">
+  <div class="hero__logo">
+    <img src="{{ '/assets/images/logo.png' | relative_url }}" alt="" loading="lazy" width="100" height="100">
   </div>
 </section>
 
@@ -27,8 +27,15 @@ layout: default
           <div class="post-card__body">
             <div class="post-card__meta">
               <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%d.%m.%Y" }}</time>
-              {%- if post.categories.size > 0 -%}
-                <span class="post-card__category">{{ post.categories | first }}</span>
+              {%- if post.categories.size > 0 or post.tags.size > 0 -%}
+                <span class="post-card__labels">
+                  {%- for category in post.categories -%}
+                    <span class="post-card__category">{{ category }}</span>
+                  {%- endfor -%}
+                  {%- for tag in post.tags -%}
+                    <span class="post-card__tag">{{ tag }}</span>
+                  {%- endfor -%}
+                </span>
               {%- endif -%}
             </div>
             <h3 class="post-card__title">{{ post.title | escape }}</h3>
